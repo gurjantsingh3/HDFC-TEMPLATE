@@ -1,0 +1,18 @@
+#!/bin/bash
+
+user="ubuntu"
+host="192.168.1.99"
+destination="/home/ubuntu/card_template/"
+
+rsync -avzh --exclude deploy --exclude  docker-compose.yml --exclude Dockerfile --exclude   .git --exclude .vscode --exclude .env --exclude README.md --exclude  .gitignore --exclude "__pycache__/" . $user@$host:$destination
+
+
+
+
+
+ssh $user@$host <<ENDSSH
+    cd $destination
+    sudo docker compose down
+    sudo docker compose up --build --remove-orphans -d
+    exit
+ENDSSH

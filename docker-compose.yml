@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    image: node:alpine  
+    ports:
+      - "5100:5100"  
+    volumes:
+      - .:/app  
+    working_dir: /app 
+    command: http-server -p 5100  
+    restart: unless-stopped
+    networks:
+      # - npm_default
+       - default
+
+networks:
+  # npm_default:
+  #   external: true
+  default:
+

